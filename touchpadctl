@@ -1,0 +1,16 @@
+#!/bin/bash
+me=`basename $0`
+if [ $# -ne 1 ]; then
+  echo "Usage: ${me} [on|off]"
+  exit 1
+fi
+if [ $1 == "on" ]; then
+  synclient TouchpadOff=0
+  exit
+fi
+if [ $1 == "off" ]; then
+  synclient TouchpadOff=1
+  exit
+fi
+echo "Usage: touchpad [on|off]"
+exit 1
